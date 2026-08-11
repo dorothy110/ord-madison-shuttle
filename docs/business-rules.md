@@ -150,3 +150,82 @@ Record:
 7. Whether fixed times are pickup, passenger meeting or wheels-moving times.
 8. Waiting, toll, airport, gratuity and cancellation policies.
 9. Airline codeshare and seasonal schedule behavior.
+
+
+## 9. Student pooling progress and price projection
+
+After submission, the student can return through a secure booking-specific link and see aggregate progress.
+
+### Current estimate
+
+For a selected vehicle plan:
+
+`current per-person estimate = ceil(customer vehicle total / current confirmed passengers)`
+
+`booking estimate = current per-person estimate × party size`
+
+The current confirmed passenger count includes the student's accepted party when applicable.
+
+### Projection
+
+For each feasible future passenger count `n`:
+
+`projected per-person price at n = ceil(customer vehicle total / n)`
+
+Show projections only up to the safe passenger capacity of the current vehicle plan. If adding passengers would require another vehicle, start a new scenario and clearly label the price discontinuity.
+
+### 7-seat example
+
+| Confirmed passengers | Projected per-person price |
+|---:|---:|
+| 1 | $300 |
+| 2 | $150 |
+| 3 | $100 |
+| 4 | $75 |
+| 5 | $60 |
+| 6 | $50 |
+
+All luggage constraints still apply. A lower passenger price does not make an infeasible luggage combination valid.
+
+### 15-seat example
+
+| Confirmed passengers | Projected per-person price |
+|---:|---:|
+| 5 | $130 |
+| 6 | $109 |
+| 7 | $93 |
+| 8 | $82 |
+| 9 | $73 |
+| 10 | $65 |
+| 11 | $60 |
+
+The 15-seat plan displays its economics in the shared workspace as:
+
+`$650 customer total − $600 vendor compensation = $50 gross margin`
+
+### Student wording
+
+The progress page should lead with one actionable sentence, for example:
+
+- “当前 6 人，预计人均 $109。”
+- “再来 2 人，预计人均可降到 $82。”
+- “当前还可加入 5 人，但仍需通过行李容量检查。”
+
+Also show:
+
+- current passengers;
+- maximum safe passengers;
+- remaining passenger spots;
+- current large/small luggage totals;
+- price projection table;
+- last updated time;
+- estimate expiry;
+- current state: collecting / commercially covered / ready to confirm / locked.
+
+### Safety and privacy
+
+- Future prices are projections, not promises.
+- Unconfirmed riders must not be counted in the current price.
+- Never reveal other passengers' names, contact details or individual flight information.
+- Capacity and time constraints override price projections.
+- If the vehicle plan changes, show a new projection version and explain the change.
