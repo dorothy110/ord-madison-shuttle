@@ -229,3 +229,35 @@ Also show:
 - Never reveal other passengers' names, contact details or individual flight information.
 - Capacity and time constraints override price projections.
 - If the vehicle plan changes, show a new projection version and explain the change.
+
+
+## 10. Fixed-slot recommendation and flexible departure
+
+The student experience recommends one configured fixed slot:
+
+- 8:00 AM
+- 10:00 AM
+- 11:30 AM
+- 1:00 PM
+- 5:30 PM
+- 6:30 PM
+- 9:30 PM
+- 10:30 PM
+
+Recommendation order:
+
+1. Exclude slots earlier than the student's conservative airport-ready time.
+2. Prefer the configured airline-affinity slot when it remains feasible.
+3. Prefer a slot with an existing compatible pool.
+4. Show the recommendation together with “时间可灵活协调”.
+
+The $300 confirmed-fare amount is the basic commercial departure threshold. Reaching $300 does not override passenger, luggage, airport-ready-time or manual-review constraints.
+
+The shared dispatch workspace does not show margin or profit. For each pool it shows a pass/fail checklist for:
+
+- passenger capacity;
+- large-luggage capacity;
+- small-luggage capacity or manual review;
+- airport-ready-time compatibility;
+- $300 confirmed-fare threshold;
+- vehicle and driver assignment.
