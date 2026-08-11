@@ -33,12 +33,11 @@ Product definition phase. No application code has been selected or generated yet
 
 ## Access model
 
-The product has three separate entry points:
+The product has two entry points:
 
-- **Public student site:** no staff login; students can submit travel demand and view only their own estimate/confirmation flow.
-- **Protected operations portal:** separate URL and mandatory account/password authentication for internal staff.
-- **Protected vendor portal:** separate URL and mandatory account/password authentication for approved vehicle vendors.
+- **Public student site:** students submit travel demand and track only their own pooling progress, projected passenger counts and estimated prices.
+- **Protected shared dispatch workspace:** operations staff and vehicle vendors sign in to the same collaboration page to pool students, choose vehicles, confirm the simple vehicle economics and assign drivers/vehicles.
 
-Operations and vendor pages are never exposed through a public role switcher. Vendor users cannot see customer pricing, company margin, other vendors, or unrelated dispatches.
+The shared workspace shows the agreed economics: a 7-seat vehicle costs/sells for $300; a completed 15-seat plan sells for $650, pays the vendor $600 and produces $50 gross margin.
 
 See [Access control and page boundaries](docs/access-control.md).
