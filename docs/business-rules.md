@@ -152,31 +152,23 @@ Record:
 9. Airline codeshare and seasonal schedule behavior.
 
 
-## 9. Student pooling progress and price projection
+## 9. Student price scenarios
 
-After submission, the student can return through a secure booking-specific link and see aggregate progress.
+The system calculates live pool progress internally, but does not expose live registration counts to students.
 
-### Current estimate
+The student sees a price-reference table based on possible final passenger counts:
 
-For a selected vehicle plan:
+`reference per-person price at n = ceil(customer vehicle total / n)`
 
-`current per-person estimate = ceil(customer vehicle total / current confirmed passengers)`
+`reference booking price = reference per-person price × submitted party size`
 
-`booking estimate = current per-person estimate × party size`
+The table is labeled:
 
-The current confirmed passenger count includes the student's accepted party when applicable.
+> “以下价格仅说明最终成团人数不同时的预计价格，不代表目前已有这些报名人数。”
 
-### Projection
+### 7-seat price reference
 
-For each feasible future passenger count `n`:
-
-`projected per-person price at n = ceil(customer vehicle total / n)`
-
-Show projections only up to the safe passenger capacity of the current vehicle plan. If adding passengers would require another vehicle, start a new scenario and clearly label the price discontinuity.
-
-### 7-seat example
-
-| Confirmed passengers | Projected per-person price |
+| Final passenger count | Reference per-person price |
 |---:|---:|
 | 1 | $300 |
 | 2 | $150 |
@@ -185,11 +177,9 @@ Show projections only up to the safe passenger capacity of the current vehicle p
 | 5 | $60 |
 | 6 | $50 |
 
-All luggage constraints still apply. A lower passenger price does not make an infeasible luggage combination valid.
+### 15-seat price reference
 
-### 15-seat example
-
-| Confirmed passengers | Projected per-person price |
+| Final passenger count | Reference per-person price |
 |---:|---:|
 | 5 | $130 |
 | 6 | $109 |
@@ -199,37 +189,15 @@ All luggage constraints still apply. A lower passenger price does not make an in
 | 10 | $65 |
 | 11 | $60 |
 
-The 15-seat plan displays its economics in the shared workspace as:
+Student-facing rules:
 
-`$650 customer total − $600 vendor compensation = $50 gross margin`
-
-### Student wording
-
-The progress page should lead with one actionable sentence, for example:
-
-- “当前 6 人，预计人均 $109。”
-- “再来 2 人，预计人均可降到 $82。”
-- “当前还可加入 5 人，但仍需通过行李容量检查。”
-
-Also show:
-
-- current passengers;
-- maximum safe passengers;
-- remaining passenger spots;
-- current large/small luggage totals;
-- price projection table;
-- last updated time;
-- estimate expiry;
-- current state: collecting / commercially covered / ready to confirm / locked.
-
-### Safety and privacy
-
-- Future prices are projections, not promises.
-- Unconfirmed riders must not be counted in the current price.
-- Never reveal other passengers' names, contact details or individual flight information.
-- Capacity and time constraints override price projections.
-- If the vehicle plan changes, show a new projection version and explain the change.
-
+- Do not display the current pool passenger count.
+- Do not display “还差 X 人”.
+- Do not mark a hypothetical row as current.
+- Do not reveal other bookings or passenger identities.
+- Final price is communicated when the vehicle is successfully formed.
+- Capacity and time constraints still override every price scenario.
+- Operations and vendors retain live counts in the authenticated workspace.
 
 ## 10. Fixed-slot recommendation and flexible departure
 
