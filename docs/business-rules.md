@@ -229,3 +229,29 @@ The shared dispatch workspace does not show margin or profit. For each pool it s
 - airport-ready-time compatibility;
 - $300 confirmed-fare threshold;
 - vehicle and driver assignment.
+
+
+## 11. Confirmed public price message
+
+For fixed-slot pooling, use these simple student-facing examples:
+
+| Possible final confirmed passengers | Student-facing reference |
+|---:|---:|
+| 2 | $150 per person |
+| 3 | $100 per person |
+| 4 | $75 per person |
+| 8–11 | ideal range about $60–$75 per person |
+
+These are hypothetical references, not live progress. The final vehicle is not promised at signup; operations selects a 7-seat or 15-seat plan only after passenger, luggage and time checks. Values for five to seven passengers require final vehicle and capacity confirmation rather than an automatic public promise.
+
+A flexible private-family request is initially quoted at $300 per vehicle only when it fits the 7-seat capacity rules. Requests outside those rules require manual confirmation.
+
+## 12. WeChat, payment and dispatch
+
+- WeChat handles conversation and group coordination.
+- The protected workspace retains the canonical contact and group status: not contacted / invited / joined group / confirmed / withdrawn.
+- Creating a WeChat group does not automatically mean the vehicle is formed.
+- Once all hard constraints and participant confirmations pass, operations marks the pool as formed.
+- Collect payment shortly before departure.
+- Do not assign or dispatch the final vehicle until the required payment state is confirmed, except for a manager-recorded exception.
+- Record the vehicle number, plate, driver and phone, then communicate the vehicle number in WeChat.
