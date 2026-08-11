@@ -161,3 +161,25 @@ Alternative states: `rejected`, `superseded`, `cancelled`.
 6. Create historical booking test cases.
 7. Define acceptance tests for every hard constraint.
 8. Select implementation stack only after the workflows are approved.
+
+
+## Confirmed portal and authentication scope
+
+The MVP is delivered as three separate entry points:
+
+1. Public student site.
+2. Authenticated operations portal.
+3. Authenticated vendor portal.
+
+MVP authentication work now includes:
+
+- operations and vendor account/password login;
+- secure server-side sessions;
+- logout and expiry;
+- vendor organization scoping;
+- operations roles for view, dispatch, lock/override and administration;
+- protected API authorization;
+- audit events for login and privileged actions;
+- secure student booking reference.
+
+The public site must not ship a role switcher that exposes operations or vendor screens. Visual references from the Lovable prototype may be reused, but its three-role single-page navigation must be split during implementation.
