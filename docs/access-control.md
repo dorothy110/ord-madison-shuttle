@@ -56,14 +56,17 @@ They can collaborate on:
 - updating dispatch status;
 - communicating schedule changes.
 
-The shared workspace may display:
+The shared workspace does not display gross margin or profit calculations. Its purpose is operational vehicle assignment.
 
-| Vehicle | Customer total | Vendor compensation | Gross margin |
-|---|---:|---:|---:|
-| 7-seat | $300 | $300 | $0 |
-| 15-seat Mercedes | $650 | $600 | $50 |
+Each departure pool prominently displays whether these conditions pass:
 
-The calculation is deliberately transparent because operations and the vendor jointly allocate vehicles.
+- confirmed passenger count versus vehicle capacity;
+- large and small luggage versus the applicable vehicle rule;
+- each student's airport-ready time versus the proposed departure;
+- confirmed collected fare versus the $300 basic departure threshold;
+- unresolved manual-review items.
+
+Fixed departures remain 8:00, 10:00, 11:30, 13:00, 17:30, 18:30, 21:30 and 22:30. The system recommends one of these slots to students, while explaining that timing can be coordinated flexibly when the $300 threshold and all safety/feasibility checks are satisfied.
 
 ## Accounts and permissions
 
@@ -123,4 +126,4 @@ Shared pricing and capacity rules can be reused by both web applications. Authen
 - Vendor/vehicle assignment changes appear in audit history.
 - Logout invalidates the session.
 - Expired and reset sessions cannot be reused.
-- The workspace displays $650 − $600 = $50 for a 15-seat plan.
+- The workspace does not display margin or profit.\n- A pool cannot be locked while passenger, luggage or time checks fail.
