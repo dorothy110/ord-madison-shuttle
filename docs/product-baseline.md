@@ -115,30 +115,41 @@ The vendor does not see student prices or company margin.
 
 ## Confirmed access boundary
 
-The three roles are not tabs in one publicly accessible application.
+The product has two entry points, not a public three-role switcher.
 
 ### Public student site
 
-- Public-facing landing and intake flow.
-- Does not expose links, navigation or hidden client-side routes for operations or vendor tools.
-- A student can view only the estimate or booking associated with a secure, scoped reference.
-- No operations financial data, passenger lists, vendor contact data or dispatch controls are delivered to the public client.
+- Public intake plus a secure, booking-scoped progress page.
+- Shows aggregate pool progress without revealing other passenger identities.
+- Shows current and projected per-person prices as the pool grows.
+- Does not deliver dispatch controls, the full demand list or other bookings to the public client.
 
-### Protected operations portal
+### Protected shared dispatch workspace
 
-- Separate route or application entry point.
-- Account and password required.
-- Available only to authorized internal operations users.
-- Can view demand, pools, assignments, customer pricing, vendor cost, margin, audit history and dispatch state.
-- Privileged actions such as price override, Confirm & Lock and account administration require explicit permissions and audit records.
+- One authenticated collaboration page for operations staff and vehicle vendors.
+- Both sides can help group students, check capacity and assign vehicles.
+- Shows the simple economics needed for collaboration:
+  - 7-seat: customer total $300, vendor compensation $300, margin $0.
+  - 15-seat: customer total $650, vendor compensation $600, margin $50.
+- Individual actions remain tied to named accounts and recorded in audit history.
+- Manager-only actions such as lock, reopen and rule override require permission and a reason.
 
-### Protected vendor portal
+Authentication is enforced by the server. Hiding a page or button in browser code is not access control.
 
-- Separate route or application entry point.
-- Account and password required.
-- Available only to approved vendor users.
-- Vendor access is scoped to that vendor's dispatches.
-- A vendor may see compensation, operational times, passenger/luggage totals and assigned driver/vehicle details.
-- A vendor must never receive customer prices, company margin, other vendors' quotes or unrelated passenger information.
+## Student pooling progress
 
-Authentication is enforced by the server. Hiding navigation or checking a role only in browser code is not considered access control.
+After submission, the student receives a secure progress view containing:
+
+- booking status;
+- suggested departure;
+- current confirmed passengers in the pool;
+- selected or currently likely vehicle plan;
+- current estimated per-person price;
+- the student's estimated booking total;
+- remaining capacity;
+- the next useful threshold, such as “再来 2 人，预计人均价降至 $X”;
+- a projection table for feasible future passenger counts;
+- estimate timestamp and expiry;
+- an explanation that unconfirmed passengers are projections, not guarantees.
+
+The progress page displays counts and prices only. It never exposes other students' names, phone numbers, flights or individual bookings.
