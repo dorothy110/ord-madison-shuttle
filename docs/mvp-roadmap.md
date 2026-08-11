@@ -182,18 +182,28 @@ MVP authentication work includes:
 
 The public site must not expose the dispatch workspace through a role switcher.
 
-## Student progress MVP
+## Student result and progress MVP
 
-The first release must let a submitted student view:
+The submitted student can view:
 
-- current pooling status;
-- confirmed passenger count;
-- remaining safe capacity;
-- current estimated per-person and booking price;
-- “再来 X 人，预计人均价为 $Y” threshold;
-- all feasible price projections for the current vehicle plan;
-- luggage-capacity warnings;
-- estimate version, update time and expiry;
-- final locked price and dispatch information when available.
+- booking/order number;
+- estimated airport-ready-time range;
+- suggested fixed slot and flexible-time explanation;
+- service choice: fixed-slot pooling / flexible private vehicle / either;
+- hypothetical price references: 2 people $150 each, 3 people $100 each, 4 people $75 each, and an ideal $60–$75 range at about 8–11 people;
+- their own fulfillment state and final vehicle number when assigned.
 
-Projection values use only confirmed passengers. They do not reveal other passenger identities and do not promise that unconfirmed demand will join.
+The public result must not show live registration count, remaining people needed, other bookings or backend pool progress.
+
+## WeChat reconciliation and pre-departure payment
+
+MVP stores manual statuses for contact, WeChat invitation, joined group, ride confirmation and withdrawal. The record remains after a WeChat group is created. A formed vehicle advances through: payment due → paid → vehicle number assigned → departed. Payment is normally collected shortly before departure and is required before dispatch.
+
+## Revised implementation priority
+
+1. Student intake, order number and airport-ready-time recommendation.
+2. Protected demand inbox with live passenger and luggage totals.
+3. Pool hard-constraint checklist and vehicle assignment.
+4. WeChat reconciliation statuses that persist independently from chat.
+5. Pre-departure payment state, vehicle number and departure state.
+6. Real server authentication and data storage before production use.
