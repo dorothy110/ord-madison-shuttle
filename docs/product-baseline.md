@@ -136,20 +136,26 @@ The product has two entry points, not a public three-role switcher.
 
 Authentication is enforced by the server. Hiding a page or button in browser code is not access control.
 
-## Student pooling progress
+## Student price-reference page
 
-After submission, the student receives a secure progress view containing:
+After submission, the student receives a secure page containing:
 
-- booking status;
-- suggested departure;
-- current confirmed passengers in the pool;
-- selected or currently likely vehicle plan;
-- current estimated per-person price;
-- the student's estimated booking total;
-- remaining capacity;
-- the next useful threshold, such as “再来 2 人，预计人均价降至 $X”;
-- a projection table for feasible future passenger counts;
+- booking/order number;
+- suggested fixed departure;
+- flexible-time explanation;
+- the student's submitted party and luggage information;
+- estimated price for the student's selected party size;
+- a price-reference table for different possible final passenger counts;
 - estimate timestamp and expiry;
-- an explanation that unconfirmed passengers are projections, not guarantees.
+- final state: submitted / contacted / confirmed / vehicle formed / vehicle number assigned.
 
-The progress page displays counts and prices only. It never exposes other students' names, phone numbers, flights or individual bookings.
+The student page does **not** show:
+
+- current live registration count;
+- how many more people are needed;
+- names or details of other students;
+- backend pooling progress.
+
+Different-passenger-count prices are hypothetical scenarios only. They must be labeled as price references and must not imply that those passenger counts have already registered.
+
+Operations and vendors continue to see the real passenger counts and pooling status in the authenticated shared workspace.
