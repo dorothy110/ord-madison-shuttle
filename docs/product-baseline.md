@@ -111,3 +111,34 @@ The vendor does not see student prices or company margin.
 - driver mobile app;
 - automated refunds;
 - automatic flight-data integration.
+
+
+## Confirmed access boundary
+
+The three roles are not tabs in one publicly accessible application.
+
+### Public student site
+
+- Public-facing landing and intake flow.
+- Does not expose links, navigation or hidden client-side routes for operations or vendor tools.
+- A student can view only the estimate or booking associated with a secure, scoped reference.
+- No operations financial data, passenger lists, vendor contact data or dispatch controls are delivered to the public client.
+
+### Protected operations portal
+
+- Separate route or application entry point.
+- Account and password required.
+- Available only to authorized internal operations users.
+- Can view demand, pools, assignments, customer pricing, vendor cost, margin, audit history and dispatch state.
+- Privileged actions such as price override, Confirm & Lock and account administration require explicit permissions and audit records.
+
+### Protected vendor portal
+
+- Separate route or application entry point.
+- Account and password required.
+- Available only to approved vendor users.
+- Vendor access is scoped to that vendor's dispatches.
+- A vendor may see compensation, operational times, passenger/luggage totals and assigned driver/vehicle details.
+- A vendor must never receive customer prices, company margin, other vendors' quotes or unrelated passenger information.
+
+Authentication is enforced by the server. Hiding navigation or checking a role only in browser code is not considered access control.
