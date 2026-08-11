@@ -2,7 +2,7 @@
 
 ## Product decision
 
-Build a lightweight three-sided operations product for fixed ORD → Madison shuttle departures.
+Build a lightweight two-entry product: a public student site and a protected shared workspace for operations and vehicle vendors.
 
 This is **not** an Uber-style marketplace and is **not** a general route optimizer. The first version solves:
 
@@ -120,8 +120,7 @@ The product has two entry points, not a public three-role switcher.
 ### Public student site
 
 - Public intake plus a secure, booking-scoped progress page.
-- Shows aggregate pool progress without revealing other passenger identities.
-- Shows current and projected per-person prices as the pool grows.
+- Does not show live pool counts, remaining people needed or other passenger identities.\n- Shows only hypothetical price references for possible final passenger counts.
 - Does not deliver dispatch controls, the full demand list or other bookings to the public client.
 
 ### Protected shared dispatch workspace
@@ -159,3 +158,22 @@ The student page does **not** show:
 Different-passenger-count prices are hypothetical scenarios only. They must be labeled as price references and must not imply that those passenger counts have already registered.
 
 Operations and vendors continue to see the real passenger counts and pooling status in the authenticated shared workspace.
+
+
+## Confirmed service modes and offline coordination
+
+### Fixed-slot pooling
+
+- Recommend a fixed departure only after estimating airport-ready time.
+- Tell students that an ideal per-person range of $60–$75 generally requires about 8–11 confirmed passengers.
+- Do not promise a 7-seat or 15-seat vehicle at signup; select the vehicle after checking the final passenger, luggage and time combination.
+
+### Flexible private vehicle
+
+- A small family may request a departure around its own airport-ready time.
+- Initial public price is $300 per vehicle when the request fits the 7-seat capacity rules.
+- Larger or unusual requests require manual confirmation.
+
+### WeChat and fulfillment
+
+WeChat is the communication channel; the protected workspace is the operational record. Staff manually retain contact/group status even after a group is created. The canonical sequence is: submitted → contacted → joined group → ride confirmed → payment due → paid → vehicle number assigned → departed. Payment is collected shortly before departure, then the vehicle is assigned and dispatched.
