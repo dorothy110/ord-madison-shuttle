@@ -29,3 +29,16 @@ A three-sided shuttle pooling product for:
 ## Status
 
 Product definition phase. No application code has been selected or generated yet.
+
+
+## Access model
+
+The product has three separate entry points:
+
+- **Public student site:** no staff login; students can submit travel demand and view only their own estimate/confirmation flow.
+- **Protected operations portal:** separate URL and mandatory account/password authentication for internal staff.
+- **Protected vendor portal:** separate URL and mandatory account/password authentication for approved vehicle vendors.
+
+Operations and vendor pages are never exposed through a public role switcher. Vendor users cannot see customer pricing, company margin, other vendors, or unrelated dispatches.
+
+See [Access control and page boundaries](docs/access-control.md).
